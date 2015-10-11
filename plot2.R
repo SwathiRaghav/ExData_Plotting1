@@ -11,8 +11,12 @@ Global_active_power<-as.numeric(levels(data$Global_active_power)[data$Global_act
 date<-strptime(paste(data$Date,data$Time,sep=" "),"%d/%m/%Y %H:%M:%S")
 
 #plot
-plot(date,Global_active_power,xlab="",ylab="Global Active Power(Killowatt)",type="o")
+plot(date,Global_active_power,xlab="",ylab="Global Active Power(Killowatt)",type="l")
 
 #Copying to png file
 dev.copy(png,"plot2.png",height=480,width=480)
 dev.off()
+
+
+
+

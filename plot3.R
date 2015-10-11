@@ -14,11 +14,12 @@ Sub_metering_1<-as.numeric(levels(data$Sub_metering_1)[data$Sub_metering_1])
 Sub_metering_2<-as.numeric(levels(data$Sub_metering_2)[data$Sub_metering_2])
 Sub_metering_3<-as.numeric(data$Sub_metering_3)
 
+
 #Plot
-plot(date,Sub_metering_1,xlab="",ylab="Energy Sub Metering",type="o")
+plot(date,Sub_metering_1,xlab="",ylab="Energy Sub Metering",type="l")
 lines(date,Sub_metering_2,col="red")
 lines(date,Sub_metering_3,col="blue")
-legend("topright",lty=1,c("sub_metering_1","sub_metering_2","sub_metering_3"),col=c("black","red","blue"))
+legend("topright",lty=1,cex=0.6,c("sub_metering_1","sub_metering_2","sub_metering_3"),col=c("black","red","blue"))
 
 
 #Copying to png file

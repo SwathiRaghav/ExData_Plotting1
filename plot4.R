@@ -18,19 +18,20 @@ voltage<-as.numeric(levels(data$Voltage)[data$Voltage])
 Global_reactive_power<-as.numeric(levels(data$Global_reactive_power)[data$Global_reactive_power])
 
 #Plot
-par(mfrow=c(2,2), mar=c(4,4,2,1),oma=c(0,1,2,0))
-plot(date,Global_active_power,xlab="",ylab="Global Active Power(Killowatt)",type="o")
-plot(date,voltage,xlab="Datetime",ylab="Voltage")
-plot(date,Sub_metering_1,xlab="",ylab="Energy Sub Metering",type="o")
+par(mfrow=c(2,2), mar=c(4,4,2,1),oma=c(0,0,2,0))
+plot(date,Global_active_power,xlab="",ylab="Global Active Power(Killowatt)",type="l")
+plot(date,voltage,xlab="Datetime",ylab="Voltage",type="l")
+plot(date,Sub_metering_1,xlab="",ylab="Energy Sub Metering",type="l")
 lines(date,Sub_metering_2,col="red")
 lines(date,Sub_metering_3,col="blue")
 legend("topright",lty=1,cex=0.4,c("sub_metering_1","sub_metering_2","sub_metering_3"),col=c("black","red","blue"))
-plot(date,Global_reactive_power,xlab="datetime",ylab="Global_reactive_power",type="o")
+plot(date,Global_reactive_power,xlab="datetime",ylab="Global_reactive_power", type="l")
 
 
 #Copying to png file
 dev.copy(png,"plot4.png",height=480,width=480)
 dev.off()
+
 
 
 
